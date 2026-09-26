@@ -1,0 +1,179 @@
+/* =========================================
+   Variables de color (Negro, Azul y Rosa)
+   ========================================= */
+:root {
+    --bg-color: #121212; /* Fondo negro */
+    --card-bg: #1e1e1e; /* Fondo gris muy oscuro para las secciones */
+    --text-color: #e0e0e0; /* Texto gris claro para buena lectura */
+    --primary-blue: #00d2ff; /* Azul brillante */
+    --accent-pink: #ff007f; /* Rosa vibrante */
+}
+
+/* =========================================
+   Estilos Generales
+   ========================================= */
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h1, h2, h3 {
+    color: var(--primary-blue);
+    margin-top: 0;
+}
+
+/* =========================================
+   Cabecera (Header)
+   ========================================= */
+header {
+    background: linear-gradient(135deg, #0a0a0a, #161616);
+    border-bottom: 4px solid var(--accent-pink);
+    text-align: center;
+    padding: 60px 20px;
+}
+
+header h1 {
+    color: white;
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: var(--primary-blue);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* =========================================
+   Secciones (Tarjetas del CV)
+   ========================================= */
+section {
+    background-color: var(--card-bg);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    border-left: 4px solid var(--primary-blue);
+}
+
+a {
+    color: var(--accent-pink);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-blue);
+    text-decoration: underline;
+}
+
+/* =========================================
+   Artículos de Experiencia y Proyectos
+   ========================================= */
+.trabajo, .proyecto {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #333;
+}
+
+.trabajo:last-child, .proyecto:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.trabajo h3, .proyecto h3 {
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.trabajo p strong, .proyecto p strong {
+    color: var(--accent-pink);
+}
+
+/* =========================================
+   Cuadrículas (Grids) para Habilidades y Formación
+   ========================================= */
+#habilidades ul, #formacion ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding-left: 0;
+    list-style: none;
+}
+
+#habilidades ul li, #formacion ul li {
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 3px solid var(--accent-pink);
+    transition: transform 0.3s ease, background-color 0.3s;
+}
+
+#habilidades ul li:hover, #formacion ul li:hover {
+    background-color: #333;
+    transform: translateX(5px);
+}
+
+#me-gusta strong {
+    color: var(--accent-pink);
+}
+
+/* =========================================
+   Pie de página (Footer)
+   ========================================= */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #0a0a0a;
+    border-top: 2px solid var(--primary-blue);
+}
+
+footer p {
+    margin: 5px 0;
+    color: #aaa;
+}
+
+/* =========================================
+   Cursor parpadeante para el JS (Efecto máquina)
+   ========================================= */
+#efecto-maquina::after {
+    content: '|';
+    color: var(--primary-blue);
+    animation: parpadeo 0.8s infinite;
+}
+
+@keyframes parpadeo {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* =========================================
+   Media Queries (Adaptación a Móviles)
+   ========================================= */
+@media (max-width: 600px) {
+    #habilidades ul, #formacion ul {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    main {
+        padding: 20px 10px;
+    }
+}
